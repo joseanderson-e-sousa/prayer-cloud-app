@@ -1,0 +1,40 @@
+.control {
+  position: fixed;
+  top: max(2px, env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 24px;
+  padding: 2px 8px;
+  border: 1px solid #173d6330;
+  border-radius: 6px;
+  background: #ffffff90;
+  color: #173d63;
+  font: inherit;
+  font-size: 11px;
+  line-height: 18px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.control[data-fullscreen="true"] { opacity: .15; }
+.control:hover, .control:focus-within { opacity: 1; }
+.button:focus-visible { outline: 2px solid #173d63; outline-offset: 2px; }
+.button:disabled { cursor: wait; }
+
+.status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

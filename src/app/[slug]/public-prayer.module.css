@@ -1,0 +1,174 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: clamp(24px, 4vh, 48px) 20px;
+  color: #173d63;
+  color-scheme: light;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at 76% 12%, #fff4cfb3, transparent 40%),
+    radial-gradient(ellipse at 48% 56%, #f4fbffb3, transparent 57%),
+    linear-gradient(160deg, #72b5e2, #c2e2f4 57%, #8dc3e6);
+}
+
+/* Cloud banks echo the mural without images or animation. */
+.page::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 0% 30%, #ffffffb0 0 7%, transparent 27%),
+    radial-gradient(ellipse at 18% 95%, #fffffff0 0 10%, transparent 32%),
+    radial-gradient(ellipse at 55% 108%, #ffffffe0 0 18%, transparent 38%),
+    radial-gradient(ellipse at 103% 75%, #ffffffc0 0 10%, transparent 30%);
+}
+
+.content {
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.brand strong {
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -.06em;
+}
+
+.brand p {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.invitation { margin-top: clamp(24px, 4vh, 40px); }
+
+.title {
+  font-size: clamp(23px, 6vw, 32px);
+  font-weight: 650;
+  letter-spacing: .06em;
+  line-height: 1.2;
+}
+
+.title span {
+  display: block;
+  margin-top: 4px;
+  color: #235680;
+  font-family: Georgia, serif;
+  font-size: 1.6em;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -.04em;
+}
+
+.subtitle { margin-top: 16px; font-size: 16px; }
+
+.card {
+  margin-top: 24px;
+  padding: clamp(20px, 5vw, 32px);
+  border: 1px solid #ffffffe0;
+  border-radius: 28px;
+  background: linear-gradient(125deg, #ffffffa8, #ffffff70);
+  box-shadow: 0 20px 65px #3676a21a, inset 0 1px 0 white;
+  backdrop-filter: blur(8px);
+  text-align: left;
+}
+
+.card form { margin-top: 0; }
+.card label {  display: block;
+  color: #173d63;
+  font-size: 14px;
+  text-align: center; }
+
+.card input {
+  min-height: 56px;
+  border: 1px solid #789ab5;
+  border-radius: 14px;
+  background: #ffffffd9;
+  color: #173d63;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.card button {
+  min-height: 56px;
+  border-radius: 14px;
+  background: #173d63;
+  box-shadow: 0 6px 18px #173d631a;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card button:hover:not(:disabled) { background: #235680; }
+.card button:disabled { cursor: wait; opacity: .7; }
+.card input:disabled { opacity: .7; }
+
+.card input:focus-visible,
+.card button:focus-visible,
+.wallLink:focus-visible {
+  outline: 3px solid #235680;
+  outline-offset: 4px;
+}
+
+.card [role="alert"],
+.card [role="status"] {
+  padding: 12px 14px;
+  border: 1px solid;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card [role="alert"] { color: #842e31; background: #fff1ef; border-color: #e2b6b6; }
+.card [role="status"] { color: #205846; background: #edf8f2; border-color: #a7cbbc; }
+
+.notice {
+  margin-top: 16px;
+  color: #315878;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.footer { margin-top: 24px; }
+.footer blockquote { font-family: Georgia, serif; font-size: 18px; }
+.footer cite {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.wallLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 12px;
+  padding-inline: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.wallLink:hover { color: #235680; }
+
+@media (max-height: 700px) {
+  .page { padding-block: 20px; }
+  .invitation { margin-top: 20px; }
+  .card { margin-top: 16px; padding: 20px; }
+  .footer { margin-top: 20px; }
+  .wallLink { margin-top: 4px; }
+}

@@ -1,0 +1,112 @@
+.loginPage {
+  composes: page from "./[slug]/public-prayer.module.css";
+}
+
+.adminPage {
+  composes: page from "./[slug]/public-prayer.module.css";
+  align-items: start;
+  padding-block: clamp(24px, 5vw, 64px);
+}
+
+.loginContent { width: 100%; max-width: 460px; }
+.loginHeader { text-align: center; }
+.brand { font-size: 24px; font-weight: 650; letter-spacing: -.06em; }
+.title {
+  margin-top: 10px;
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+
+.loginCard, .panel {
+  padding: clamp(20px, 5vw, 32px);
+  border: 1px solid #ffffffe0;
+  border-radius: 28px;
+  background: linear-gradient(125deg, #ffffffc4, #ffffff96);
+  box-shadow: 0 20px 65px #3676a21a, inset 0 1px 0 white;
+  backdrop-filter: blur(8px);
+  overflow-wrap: anywhere;
+}
+
+.loginCard { display: grid; gap: 24px; margin-top: 28px; }
+.field { display: grid; gap: 8px; min-width: 0; }
+.field label { font-size: 14px; font-weight: 600; }
+.input {
+  width: 100%;
+  min-width: 0;
+  min-height: 56px;
+  padding: 12px 16px;
+  border: 1px solid #789ab5;
+  border-radius: 14px;
+  background: #ffffffd9;
+  color: #173d63;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.primaryButton, .secondaryButton {
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.primaryButton {
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 20px;
+  background: #173d63;
+  color: white;
+  box-shadow: 0 6px 18px #173d631a;
+}
+.secondaryButton {
+  min-height: 44px;
+  padding: 9px 18px;
+  border: 1px solid #789ab5;
+  background: #ffffffb3;
+  color: #173d63;
+}
+.primaryButton:hover:not(:disabled) { background: #235680; }
+.secondaryButton:hover:not(:disabled) { background: #eaf5fd; border-color: #235680; }
+.primaryButton:disabled, .secondaryButton:disabled { cursor: wait; opacity: .7; }
+.input:focus-visible, .primaryButton:focus-visible, .secondaryButton:focus-visible {
+  outline: 3px solid #235680;
+  outline-offset: 4px;
+}
+.alert {
+  padding: 12px 14px;
+  border: 1px solid #e2b6b6;
+  border-radius: 12px;
+  color: #842e31;
+  background: #fff1ef;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.adminContent { width: 100%; max-width: 960px; min-width: 0; }
+.adminHeader { display: flex; flex-wrap: wrap; align-items: start; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+.adminActions { display: flex; flex-wrap: wrap; align-items: start; gap: 12px; }
+.heading { flex: 1 1 240px; min-width: 0; overflow-wrap: anywhere; }
+.church { margin-top: 12px; color: #315878; font-size: 18px; font-weight: 500; }
+.sectionTitle { font-size: 20px; font-weight: 650; }
+.panel > .alert { margin-block: 16px; }
+.counter { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 12px; color: #315878; font-size: 14px; }
+.counter strong { padding: 3px 12px; border: 1px solid #bbd3e5; border-radius: 12px; background: #eaf5fd; color: #173d63; font-size: 20px; font-variant-numeric: tabular-nums; }
+.prayerList { display: grid; gap: 12px; margin-top: 24px; padding: 0; list-style: none; }
+.prayerCard { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px; border: 1px solid #d0e1ed; border-radius: 18px; background: #ffffffd9; }
+.prayerInfo { flex: 1 1 180px; min-width: 0; }
+.prayerName { font-size: 18px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+.status { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 3px 9px; border-radius: 8px; background: #eaf5fd; color: #235680; font-size: 12px; font-weight: 600; }
+.status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.archived { background: #ffffff70; border-color: #d5e2eb; }
+.archived .prayerName { color: #50677b; font-weight: 500; }
+.archived .status { color: #50677b; background: #eaf0f5; }
+.actionForm { display: grid; justify-items: start; gap: 10px; max-width: 100%; }
+.actionForm .alert { max-width: 280px; }
+.empty { margin-top: 24px; padding: 28px 16px; border: 1px dashed #a2bdd0; border-radius: 18px; text-align: center; color: #315878; }
+
+@media (max-height: 700px) {
+  .loginCard { margin-top: 20px; gap: 18px; }
+}
